@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AkarionDevelopers/translate-jp#readme",
   "dependencies": {
+    "@google-cloud/translate": "^4.0.1",
     "google-translate-api": "^2.3.0"
   }
 }
