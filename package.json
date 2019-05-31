@@ -1,0 +1,22 @@
+{
+  "name": "translate-jp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkarionDevelopers/translate-jp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkarionDevelopers/translate-jp/issues"
+  },
+  "homepage": "https://github.com/AkarionDevelopers/translate-jp#readme",
+  "dependencies": {
+    "google-translate-api": "^2.3.0"
+  }
+}
