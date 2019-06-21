@@ -1,17 +1,34 @@
-const translate = require('google-translate-api');
 
-translate('I spea Dutch!', {from: 'en', to: 'nl'})
-  .then(res => {
-    console.log(res.text);
-    //=> Ik spreek Nederlands!
-    console.log(res.from.text.autoCorrected);
-    //=> true
-    console.log(res.from.text.value);
-    //=> I [speak] Dutch!
-    console.log(res.from.text.didYouMean);
-    //=> false
-  })
-  .catch(err => {
-    console.error(err);
-  });
+async function translateText(text, target) {
+
+
+  // [START translate_translate_text]
+  // Imports the Google Cloud client library
+  const {Translate} = require('@google-cloud/translate');
   
+  // Creates a client
+  const translate = new Translate();
+  
+
+  /**
+   * TODO(developer): Uncomment the following lines before running the sample.
+   */
+  //var text = 'test';
+  //var target = 'jp';
+  
+  // Translates the text into the target language. "text" can be a string for
+  // translating a single piece of text, or an array of strings for translating
+  // multiple texts.
+  let [translations] = await translate.translate(text, target);
+  translations = Array.isArray(translations) ? translations : [translations];
+  console.log('Translations:');
+  translations.forEach((translation, i) => {
+    console.log(`${text[i]} => (${target}) ${translation}`);
+    
+  });
+
+  // [END translate_translate_text]
+}
+
+translateText("test","ja");
+
