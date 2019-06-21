@@ -7,7 +7,7 @@ async function translateText(text, target) {
   const {Translate} = require('@google-cloud/translate');
   
   // Creates a client
-  const translate = new Translate();
+  const translate = new Translate({key:'AIzaSyDNf1wtcKv_XSXESofRCbc1qkfJJ2x995g'});
   
 
   /**
